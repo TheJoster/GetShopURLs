@@ -34,8 +34,8 @@ class FromwhiskybaseSpider(scrapy.Spider):
             rel_shop_url = sel.css('.info a:nth-child(1)::attr(href)').extract_first()
             l.add_value('rel_shop_url', rel_shop_url)
 
-            rel_prices_url = rel_shop_url[0:rel_shop_url.rfind('/')]+'/fetchshoplinks'
-            l.add_value('rel_prices_url', rel_prices_url)
+            rel_prices_url = rel_shop_url[0:rel_shop_url.rfind('/')]
+            l.add_value('rel_prices_url', rel_prices_url+'/fetchshoplinks')
 
             id = rel_prices_url[rel_prices_url.rfind('/')+1:]
             l.add_value('id', id)
