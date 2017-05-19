@@ -30,9 +30,15 @@ class FromwhiskybaseSpider(scrapy.Spider):
         for sel in response.css(".compositor-gridrow"):
             l = ItemLoader(item=Shop(), selector=sel)
             l.add_css('name', '.info a:nth-child(1)::text')
+
             rel_shop_url = sel.css('.info a:nth-child(1)::attr(href)').extract_first()
             l.add_value('rel_shop_url', rel_shop_url)
-            l.add_value('rel_prices_url', rel_shop_url[0:rel_shop_url.rfind('/')]+'/fetchshoplinks')
+
+            rel_prices_url = rel_shop_url[0:rel_shop_url.rfind('/')]+'/fetchshoplinks'
+            l.add_value('rel_prices_url', rel_prices_url)
+
+            id = rel_prices_url[rel_prices_url.rfind('/')+1:]
+            l.add_value('id', id)
             yield l.load_item()
             #resultArray.append(l.load_item())
         pass

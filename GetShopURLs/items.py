@@ -26,3 +26,4 @@ class Shop(scrapy.Item):
     name = scrapy.Field()
     rel_shop_url = scrapy.Field()
     rel_prices_url = scrapy.Field()
+    id = scrapy.Field()
