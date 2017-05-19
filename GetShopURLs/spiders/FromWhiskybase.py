@@ -26,25 +26,14 @@ class FromwhiskybaseSpider(scrapy.Spider):
     start_urls = ['https://www.whiskybase.com/explore/shop/']
 
     def parse(self, response):
+        #resultArray = []
         for sel in response.css(".compositor-gridrow"):
             l = ItemLoader(item=Shop(), selector=sel)
             l.add_css('name', '.info a:nth-child(1)::text')
             rel_shop_url = sel.css('.info a:nth-child(1)::attr(href)').extract_first()
             l.add_value('rel_shop_url', rel_shop_url)
             l.add_value('rel_prices_url', rel_shop_url[0:rel_shop_url.rfind('/')]+'/fetchshoplinks')
-            print '-' * 20
-            print l.load_item()
-            # name = stripText(sel.css('a::text').extract())
-            # url = sel.css('a::attr(href)').extract_first()
-            # print '-' * 10
-            # print name + ' - ' + url
-            # # test = Shop("Test","http://wwww.google.com")
-
-        # l = ItemLoader(item=Shop(), response=response)
-        # l.add_css('name', '.info a:nth-child(1)::text')
-        # l.add_css('url', '.info a:nth-child(1)::attr(href)')
-        # print '-' * 20
-        # print l.load_item()
-
+            yield l.load_item()
+            #resultArray.append(l.load_item())
         pass
 
