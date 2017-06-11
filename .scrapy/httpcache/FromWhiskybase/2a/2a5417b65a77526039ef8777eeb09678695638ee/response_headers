@@ -1,0 +1,7 @@
+Content-Encoding: gzip
+Set-Cookie: XSRF-TOKEN=eyJpdiI6InRvYnczQUVtQmcxVEtUVXRTeTRkd2c9PSIsInZhbHVlIjoiN0xRRnVtR0hhc3RicmltM0xwYzJxK0NNeEtObTRUUDFkdld5R051b1RCR1JYMW0rN1wvV2N3S1J1dWpcL3lHekdxMWQrckdGUExVOVh3UmlMYmlQTzNvQT09IiwibWFjIjoiZDIyMjRiMDZjODA4NzIyMDkwNTJmMDJmYTQ5MjcyYjc3Mjg1ZTJjOGQwNjJjMmMxMmU5ZjgxOWFlYWI0N2JlNiJ9; expires=Sat, 10-Jun-2017 16:29:52 GMT; Max-Age=7200; path=/; domain=whiskybase.com
+Set-Cookie: barrel=eyJpdiI6InR3bHFsSnV6VGg4OThNMVwvWEppcG1RPT0iLCJ2YWx1ZSI6IlZIYkkzUmltb3hLd2VJZXR4c21SSnJFK3pwNW10WUt3WXVyaVJMbnhFZU5naVFLMEdcL0taRXhXT1BtUDlhTGpQNis3ZGpGbCszOEJxRTBlS3hFcnNNdz09IiwibWFjIjoiMTkxMzAzMjk4YzE1NGMwNmJmNjZiMDI2ODgzZGY2ZDFkMDczMTYxYjZiZTc3ZjMzMGU0N2IyMjk5N2U2OGUzNyJ9; expires=Sun, 15-Jun-2036 01:08:52 GMT; Max-Age=599999940; path=/; domain=whiskybase.com; httponly
+Server: nginx
+Cache-Control: no-cache
+Date: Sat, 10 Jun 2017 14:29:52 GMT
+Content-Type: text/html; charset=UTF-8

@@ -17,13 +17,49 @@ def filter_price(value):
     if value.isdigit():
         return value
 
+def serialize_name(value):
+    return str(value)
+
 class GetshopurlsItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     pass
 
-class Shop(scrapy.Item):
+class Base(scrapy.Item):
+    id = scrapy.Field()
     name = scrapy.Field()
+    #name = scrapy.Field(serializer = serialize_name)
+    type = scrapy.Field()
+    
+class Distillery(Base):
+    country = scrapy.Field()
+    number_of_whiskies = scrapy.Field()
+    #type = 'Distillery'
+
+class Brand(Distillery):    
+    pass
+    #type = 'Brand'
+
+class Bottler(Distillery):
+    pass
+    #type = 'Bottler'
+
+class Whisky(Base):
+    stated_age = scrapy.Field()
+    strength = scrapy.Field()
+    size = scrapy.Field()
+    bottled = scrapy.Field()
+    casknumber = scrapy.Field()
+    barcode = scrapy.Field()
+    rating = scrapy.Field()
+    country = scrapy.Field()
+    region = scrapy.Field()
+    versions = scrapy.Field()
+    shoplinks = scrapy.Field()
+    detailslink = scrapy.Field()
+
+class Shop(Base):
     rel_shop_url = scrapy.Field()
     rel_prices_url = scrapy.Field()
-    id = scrapy.Field()
+    shop_url = scrapy.Field()
+    #type = 'Shop'
