@@ -71,8 +71,8 @@ class FromwhiskybaseSpider(scrapy.Spider):
     start_urls = [
     #   'https://www.whiskybase.com/explore/shop/',
        'https://www.whiskybase.com/whiskies/brands',
-    #   'https://www.whiskybase.com/whiskies/distilleries',
-    #   'https://www.whiskybase.com/whiskies/bottlers',
+       'https://www.whiskybase.com/whiskies/distilleries',
+       'https://www.whiskybase.com/whiskies/bottlers',
     #   'https://www.whiskybase.com/search?style=table&bottler=&brandname=&vintage_year=&bottle_date_year=&itemsforsale=&rating=&h=whisky.id,whisky.age,whisky.strength,whisky.bottle_size,whisky.bottle_date_year,whisky.cask_number,whisky.barcode,whisky.rating,user.country,generic.region,whisky.otherreleases,whisky.shoplinks,style&q=ardbeg',
     ]
     
@@ -121,7 +121,7 @@ class FromwhiskybaseSpider(scrapy.Spider):
                 query = query.replace(' ','+')
                 search4brands_url = 'https://www.whiskybase.com/search?style=table&bottler=&brandname=&vintage_year=&bottle_date_year=&itemsforsale=&rating=&h=whisky.id,whisky.age,whisky.strength,whisky.bottle_size,whisky.bottle_date_year,whisky.cask_number,whisky.barcode,whisky.rating,user.country,generic.region,whisky.otherreleases,whisky.shoplinks,style&q=' + parsed_class['name'][0].replace(' ','+')
                 
-                #yield scrapy.Request(search4brands_url, callback = self.parse)
+                yield scrapy.Request(search4brands_url, callback = self.parse)
 
                 '''
                 #if sel.css('.clickable a::text').extract_first() == None:
